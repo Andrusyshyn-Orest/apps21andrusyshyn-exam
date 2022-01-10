@@ -9,7 +9,7 @@ public class JsonPair extends Tuple<String, Json> {
         super(name, value);
     }
 
-    public String toJson(){
+    public String toJson() {
         return "'" + this.key + "'" + ": " + this.value.toJson();
     }
 }

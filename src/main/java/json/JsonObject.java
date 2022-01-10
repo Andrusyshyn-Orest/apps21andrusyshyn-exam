@@ -17,7 +17,7 @@ public class JsonObject extends Json {
         }
     }
 
-    public Map getMap(){
+    public Map getMap() {
         return this.map;
     }
 
@@ -46,7 +46,7 @@ public class JsonObject extends Json {
     }
 
     public Json find(String name) {
-        if (this.contains(name)){
+        if (this.contains(name)) {
             return map.get(name);
         }
         return null;
@@ -54,16 +54,16 @@ public class JsonObject extends Json {
 
     public JsonObject projection(String... names) {
         JsonObject jsonObj = new JsonObject();
-        for (String name : names){
-            if (this.contains(name)){
+        for (String name : names) {
+            if (this.contains(name)) {
                 jsonObj.add(new JsonPair(name, map.get(name)));
             }
         }
         return jsonObj;
     }
 
-    public boolean contains(String name){
-        if (map.keySet().contains(name)){
+    public boolean contains(String name) {
+        if (map.keySet().contains(name)) {
             return true;
         }
         return false;

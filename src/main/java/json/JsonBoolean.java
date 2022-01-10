@@ -12,7 +12,7 @@ public class JsonBoolean extends Json {
 
     @Override
     public String toJson() {
-        if (bool){
+        if (bool) {
             return "true";
         }
         return "false";
