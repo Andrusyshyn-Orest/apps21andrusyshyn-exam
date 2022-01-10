@@ -1,15 +1,21 @@
 package domain;
 
-import json.*;
+
+import json.JsonObject;
+import json.JsonPair;
+import json.JsonString;
+import json.Jsonable;
+import json.JsonNumber;
+
 
 /**
  * Created by Andrii_Rodionov on 1/5/2017.
  */
 public class BasicStudent implements Jsonable {
 
-    protected String name;
-    protected String surname;
-    protected Integer year;
+    private String name;
+    private String surname;
+    private Integer year;
 
     public BasicStudent() {
     }
@@ -22,10 +28,11 @@ public class BasicStudent implements Jsonable {
 
     @Override
     public JsonObject toJsonObject() {
-        JsonPair name = new JsonPair("name", new JsonString(this.name));
-        JsonPair surname = new JsonPair("surname", new JsonString(this.surname));
-        JsonPair year = new JsonPair("year", new JsonNumber(this.year));
-        JsonObject jsonObject = new JsonObject(name, surname, year);
+        JsonPair jname = new JsonPair("name", new JsonString(this.name));
+        JsonPair jsurname = new JsonPair("surname",
+                new JsonString(this.surname));
+        JsonPair jyear = new JsonPair("year", new JsonNumber(this.year));
+        JsonObject jsonObject = new JsonObject(jname, jsurname, jyear);
         return jsonObject;
     }
 }
